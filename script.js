@@ -11,7 +11,7 @@ let numberB = document.querySelector("#numberb")
 addDiv(16);
 var colorC = "#000"
 var coloringChoice = 0;
-console.log(coloringChoice)
+let shading = 0;
 
 
 function updateTextInput(val) {
@@ -30,16 +30,19 @@ colorPick.addEventListener('input', () => {
     console.log(colorPick.value)
     colorC = colorPick.value
     coloringChoice = 0;
+    shading = 0;
 });
 
 const randomButton = document.getElementById('random-rgb')
 randomButton.addEventListener("click", () => {
     coloringChoice = 1;
+    shading = 0
 })
 
 const ereaserButton = document.getElementById("eraser")
 ereaserButton.addEventListener("click", () => {
   coloringChoice = 2;
+  shading = 0;
 })
 
 
@@ -49,21 +52,28 @@ clearButton.addEventListener('click', () => {
   addDiv(numberB.value)
 }) 
 
+/* const shadingButton = document.getElementById("shading") 
+shadingButton.addEventListener('click', () => {
+  shading = 1;
+})
+ */
 
 function addDiv (value) {
     divN = value
     j = 0;
     for (let i = 0; i < divN*divN; i++) {
         const divA = document.createElement("div")
-        divA.setAttribute("style", `width: ${(1/divN)*600}px; height: ${(1/divN)*600}px; border: dashed 0.5px darkgray;`)
+        divA.setAttribute("style", `width: ${(1/divN)*600}px; height: ${(1/divN)*600}px; border: solid 0.05px darkgray; background-color: #ffffff;`)
         divA.addEventListener('mouseover', () => {
-          if (coloringChoice == 0) {
+          if (coloringChoice == 0 /* && shading == 0 */) {
             divA.style.backgroundColor =`${colorC}`
-          } else if (coloringChoice == 1) {
+          } else if (coloringChoice == 1 /* && shading == 0 */) {
             divA.style.backgroundColor = `${getRandomColor()}`
-          } else if (coloringChoice == 2) {
+          } else if (coloringChoice == 2 /* && shading == 0 */) {
             divA.style.backgroundColor = "#fff"
-          }
+          } /* else if (shading == 1) {
+            divA.style.backgroundColor = `${divA.style.backgroundColor.value * 1.1}`
+          } */
         })
         containDiv.appendChild(divA)
         j++
