@@ -10,6 +10,8 @@ let j;
 let numberB = document.querySelector("#numberb")
 addDiv(16);
 var colorC = "#000"
+var coloringChoice = 0;
+console.log(coloringChoice)
 
 
 function updateTextInput(val) {
@@ -27,7 +29,13 @@ let colorPick = document.getElementById("rgbButton")
 colorPick.addEventListener('input', () => {
     console.log(colorPick.value)
     colorC = colorPick.value
+    coloringChoice = 0;
 });
+
+const randomButton = document.getElementById('random-rgb')
+randomButton.addEventListener("click", () => {
+    coloringChoice = 1;
+})
  
 
 
@@ -36,9 +44,13 @@ function addDiv (value) {
     j = 0;
     for (let i = 0; i < divN*divN; i++) {
         const divA = document.createElement("div")
-        divA.setAttribute("style", `width: ${(1/divN)*600}px; height: ${(1/divN)*600}px; border: dashed 0.5px gray;`)
+        divA.setAttribute("style", `width: ${(1/divN)*600}px; height: ${(1/divN)*600}px; border: dashed 0.5px darkgray;`)
         divA.addEventListener('mouseover', () => {
+          if (coloringChoice == 0) {
             divA.style.backgroundColor =`${colorC}`
+          } else if (coloringChoice == 1) {
+            divA.style.backgroundColor = `${getRandomColor()}`
+          }
         })
         containDiv.appendChild(divA)
         j++
@@ -62,3 +74,4 @@ function getRandomColor() {
   }
 
 
+console.log(coloringChoice)
