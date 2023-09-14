@@ -13,7 +13,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 300px;
     background-color: #444;
 
 }
@@ -31,6 +30,8 @@ body{
     background-color: white;
     border-radius: 2px;
     border: 5px solid red;
+    min-width: 610px;
+    min-height: 610px;
 }
 
 .options {
@@ -41,6 +42,7 @@ body{
     gap: 50px;
     height: 600px;
     width: 350px;
+    min-height: 600px;
     
 }
 
@@ -53,8 +55,17 @@ body{
     text-align: center;
 }
 
+#rgbButton {
+    margin-left: 70px;
+}
+
+#submit-button {
+    padding: 4px;
+    font-size: 15px;
+}
+
 #numberb {
-    margin-top: 25px;
+    margin-top: 15px;
     margin-right: 5px;
     border-radius: 3px;
     width: 150px;
@@ -80,4 +91,12 @@ body{
 .the-buttons {
     padding: 20px;
     font-size: large;
+}
+
+.bcolor {
+
+}
+
+.brandom {
+    
 }

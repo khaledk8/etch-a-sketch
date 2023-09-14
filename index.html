@@ -12,10 +12,10 @@
         <label id="label-one"><span id="nblocks">16</span>
             <input type="range" min="1" max="50" value="16" id="numberb" step="1" onchange="updateTextInput(this.value);">
         </label> 
-        <label>
-            <span id="pick">Pick a color</span>
+        <label id="label-two">
+            <span id="pick">Pick a color (or don't)</span>
             <br>
-            <input class="rgbcolor" type="color"/>
+            <input id="rgbButton" class="rgbcolor" type="color" value="#000000">
         </label>
         <button class="the-buttons">Random</button>
         <button class="the-buttons">Scaler</button>
