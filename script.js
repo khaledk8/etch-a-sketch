@@ -41,7 +41,13 @@ const ereaserButton = document.getElementById("eraser")
 ereaserButton.addEventListener("click", () => {
   coloringChoice = 2;
 })
- 
+
+
+const clearButton = document.getElementById("clear-button")
+clearButton.addEventListener('click', () => {
+  removeDiv(j)
+  addDiv(numberB.value)
+}) 
 
 
 function addDiv (value) {
@@ -81,4 +87,3 @@ function getRandomColor() {
   }
 
 
-console.log(coloringChoice)
