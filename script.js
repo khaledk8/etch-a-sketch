@@ -36,6 +36,11 @@ const randomButton = document.getElementById('random-rgb')
 randomButton.addEventListener("click", () => {
     coloringChoice = 1;
 })
+
+const ereaserButton = document.getElementById("eraser")
+ereaserButton.addEventListener("click", () => {
+  coloringChoice = 2;
+})
  
 
 
@@ -50,6 +55,8 @@ function addDiv (value) {
             divA.style.backgroundColor =`${colorC}`
           } else if (coloringChoice == 1) {
             divA.style.backgroundColor = `${getRandomColor()}`
+          } else if (coloringChoice == 2) {
+            divA.style.backgroundColor = "#fff"
           }
         })
         containDiv.appendChild(divA)
